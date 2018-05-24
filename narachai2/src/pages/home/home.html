@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form novalidate #myForm="ngForm" (ngSubmit)="search(myForm.value)">
+     
+    <ion-list>
+      <ion-item>
+        <ion-label floating>รหัสสินค้า</ion-label>
+        <ion-input ngModel type="text" name="p_code" required></ion-input>
+      </ion-item>
+
+   
+    <ion-item>
+        <button [disabled]="myForm.invalid" ion-button large full>ค้นหา</button>
+    
+    </ion-item>
+     
+  </ion-list>
+  </form>
+<ion-list>
+  <ion-item>
+    <button (click)="scan()" ion-button color="danger" large full>สแกน</button>
+
+</ion-item>
+ 
+</ion-list>
+  
+
+</ion-content>

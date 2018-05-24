@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   
+  <form novalidate #myForm="ngForm" (ngSubmit)="calcul(myForm.value)">
+     
+    <ion-list>
+
+        <ion-item>
+            <ion-label>เลือกเพศ</ion-label>
+            <ion-select ngModel name="myGender" required>           
+               <ion-option value="m">ชาย</ion-option>
+               <ion-option value="f">หญิง</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>อายุ</ion-label>
+              <ion-input ngModel type="number" name="myAge" required></ion-input>
+            </ion-item>
+      <ion-item>
+        <ion-label floating>ส่วนสูง</ion-label>
+        <ion-input ngModel type="number" name="myHeight" required></ion-input>
+      </ion-item>
+
+   
+
+    <ion-item>
+        <ion-label floating>น้ำหนัก</ion-label>
+        <ion-input ngModel type="number" name="myWeight" required></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>การออกกำลังกาย</ion-label>
+        <ion-select ngModel name="myTdee" required>
+           <ion-option value="1">น้อยมากหรือไม่ออกเลย</ion-option>
+           <ion-option value="2">1-3 ครั้งต่อสัปดาห์</ion-option>
+           <ion-option value="3">4-5 ครั้งต่อสัปดาห์</ion-option>
+           <ion-option value="4">6-7 ครั้งต่อสัปดาห์ </ion-option>
+           <ion-option value="5">วันละ 2 ครั้งขึ้นไป</ion-option>
+        </ion-select>
+      </ion-item>
+
+    <ion-item>
+        <button [disabled]="myForm.invalid" ion-button large full>คำนวน</button>
+    
+    </ion-item>
+     
+  </ion-list>
+  </form>
+
+     
+
+</ion-content>
